@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<h2>User Profile</h2>
+
+<div class="profile-card">
+  <div class="avatar">🌿</div>
+  <h3>Eco User</h3>
+
+  <p><strong>Level:</strong> {{ level }}</p>
+  <p><strong>Eco Score:</strong> {{ ecoScore }}</p>
+  <p><strong>Total XP:</strong> {{ totalXp }}</p>
+  <p><strong>Total Streaks:</strong> {{ totalStreaks }}</p>
+</div>
+
+<h3>Achievements</h3>
+<div class="achievement" *ngFor="let a of achievements">
+  <span [class.locked]="!a.unlocked">
+    {{ a.unlocked ? '🏆' : '🔒' }}
+  </span>
+  {{ a.name }}
+</div>

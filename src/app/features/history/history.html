@@ -1,0 +1,10 @@
+<h2>Habit History</h2>
+
+<div *ngIf="history.length === 0">
+  <p>No history yet. Complete some habits!</p>
+</div>
+
+<div class="history-item" *ngFor="let h of history">
+  <strong>{{ h.name }}</strong>
+  <p>{{ formatDate(h.timestamp) }}</p>
+</div>

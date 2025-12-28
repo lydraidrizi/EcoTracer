@@ -1,0 +1,18 @@
+<h2>Add New Habit</h2>
+
+<form (ngSubmit)="addHabit()">
+  <label>Name</label>
+  <input [(ngModel)]="name" name="name" required />
+
+  <label>Description</label>
+  <textarea [(ngModel)]="description" name="description"></textarea>
+
+  <label>Category</label>
+  <input [(ngModel)]="category" name="category" />
+  
+  <label>Daily Goal (times per day)</label>
+<input type="number" [(ngModel)]="dailyGoal" name="dailyGoal" min="1" />
+
+
+  <button type="submit">Add Habit</button>
+</form>

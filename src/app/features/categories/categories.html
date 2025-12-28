@@ -1,0 +1,9 @@
+<h2>Habit Categories</h2>
+
+<div class="category-card" *ngFor="let c of categories">
+  <h3>{{ c.name }}</h3>
+
+  <p>Habits: {{ c.count }}</p>
+  <p>Total XP: {{ c.totalXp }}</p>
+  <p>Total Streak: {{ c.totalStreak }}</p>
+</div>

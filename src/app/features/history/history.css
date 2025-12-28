@@ -1,0 +1,11 @@
+.history-item {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .history-item {
+  background: #1e1e1e;
+  color: white;
+}

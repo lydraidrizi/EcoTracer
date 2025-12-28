@@ -1,0 +1,79 @@
+<h1>EcoTracer Dashboard</h1>
+
+<div class="stats">
+  <div class="stat-card">
+    <h2>Total XP</h2>
+    <p>{{ totalXP }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>Total Streak</h2>
+    <p>{{ totalStreak }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>Eco Score</h2>
+    <p>{{ ecoScore }}</p>
+  </div>
+</div>
+
+<hr>
+
+<h2>Your Habits</h2>
+<p>You have {{ habits.length }} eco habits.</p>
+<div class="stat-card">
+  <h2>Daily Goals</h2>
+  <p>{{ dailyGoalsCompleted }} / {{ totalDailyGoals }}</p>
+  <div class="progress-container">
+  <div class="progress-bar" [style.width.%]="dailyProgressPercent"></div>
+</div>
+
+<p>{{ dailyGoalsCompleted }} / {{ totalDailyGoals }} daily goals completed</p>
+<h2>Achievements</h2>
+
+<div *ngFor="let a of achievements">
+  <p [style.opacity]="a.unlocked ? 1 : 0.3">
+    {{ a.unlocked ? '🏆' : '🔒' }} {{ a.name }}
+  </p>
+  <div class="stat-card">
+  <h2>Level</h2>
+  <p>Level {{ level }}</p>
+
+  <div class="level-progress-container">
+    <div class="level-progress-bar" [style.width.%]="levelProgressPercent"></div>
+  </div>
+  <h2>Weekly XP</h2>
+
+<div class="xp-chart">
+  <div class="xp-bar" *ngFor="let d of weeklyXp">
+    <div class="bar" [style.height.%]="d.xp"></div>
+    <p>{{ d.day }}</p>
+    <small>{{ d.xp }} XP</small>
+  </div>
+</div>
+<div class="stat-card">
+  <h2>Eco Score</h2>
+  <p>{{ ecoScore }}</p>
+</div>
+
+
+  <p>{{ xpIntoCurrentLevel }} / {{ xpForCurrentLevel }} XP to next level</p>
+</div>
+<div class="quote-box">
+  <p>{{ dailyQuote }}</p>
+</div>
+<div class="stat-card" [class.level-up]="levelProgressPercent === 0">
+    <div class="stat-card">
+  <h2>Streak Freeze</h2>
+  <p>{{ streakFreezeTokens }} tokens</p>
+</div>
+
+  
+</div>
+
+
+
+</div>
+
+
+</div>

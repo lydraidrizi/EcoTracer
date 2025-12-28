@@ -1,0 +1,25 @@
+<h1>Your Eco Habits</h1>
+
+
+<div class="controls">
+  <label>Sort by:</label>
+  <select [(ngModel)]="sortBy">
+    <option value="none">None</option>
+    <option value="xp">XP</option>
+    <option value="streak">Streak</option>
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+  </select>
+
+  <label>Filter:</label>
+  <select [(ngModel)]="filterCategory">
+    <option value="all">All</option>
+    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+  </select>
+</div>
+
+
+<app-habit-card
+  *ngFor="let habit of filteredHabits"
+  [habit]="habit">
+</app-habit-card>

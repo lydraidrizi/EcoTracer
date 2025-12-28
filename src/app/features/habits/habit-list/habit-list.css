@@ -1,0 +1,12 @@
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+select {
+  padding: 0.4rem;
+  border-radius: 6px;
+}

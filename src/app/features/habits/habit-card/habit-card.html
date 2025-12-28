@@ -1,0 +1,26 @@
+<div class="habit-card">
+  <h2>{{ habit.name }}</h2>
+  <p>{{ habit.description }}</p>
+  <div class="category-tag" [style.background]="getCategoryColor(habit.category)">
+    {{ getCategoryIcon(habit.category) }} {{ habit.category }}
+  </div>
+
+  <div class="meta">
+    <span class="category">{{ habit.category }}</span>
+    <span class="stats">Streak: {{ habit.streak }} | XP: {{ habit.xp }}</span>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" [style.width.%]="getProgressPercent()"></div>
+  </div>
+  <p class="progress-text">{{ habit.xp }} XP</p>
+
+  <p class="daily-progress">
+    Today: {{ habit.todayCount || 0 }} / {{ habit.dailyGoal }}
+  </p>
+  <div class="habit-card" [class.complete-pop]="popAnimation">
+  </div>
+
+  <button (click)="completeHabit()">Complete</button>
+  <button class="delete" (click)="deleteHabit()">Delete</button>
+  <button class="edit" [routerLink]="['/edit-habit', habit.id]" style="margin-left: 10px;">Edit</button>
+</div>
